@@ -4,8 +4,8 @@ const sequelize = require('../../config/connection');
 
 //get all users
 router.get('/', (req, res) =>{
+    console.log('======================');
     Post.findAll({
-      order: [['created_at', 'DESC']],
         attributes: [
           'id',
           'post_url',
@@ -13,6 +13,7 @@ router.get('/', (req, res) =>{
           'created_at',
           [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
+        order: [['created_at', 'DESC']],
         include:[
             {
               model: Comment,

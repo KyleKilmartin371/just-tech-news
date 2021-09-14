@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "seeds": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "jest": "^27.2.0",
     "mysql2": "^2.3.0",
     "sequelize": "^6.6.5"
   }
